@@ -1,4 +1,18 @@
-# In progress... Testing some features at the moment.
+# iTunr
+This is a small utility script I wrote to solve a mindless problem - my iTunes library had accumulated several hundred missing file links. Astonishingly, there was no free, easy solution available on the internets to solve this problem. I looked through the available ruby gems, and there were a few duplicate removers, but nothing that could help me with this issue.
 
-# Features
+### Usage
+```bash
+    bundle install
+    ruby itunr.rb
+```
+
+## Features
 - Cleans out dead links to songs that are missing from your hard drive
+- Creates backups of all files it modifies, just in case
+
+## TODO:
+- Add tests
+- Make this into a gem
+- ADD CLI capability
+- Add duplicate track management features

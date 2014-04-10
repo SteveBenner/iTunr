@@ -1,4 +1,4 @@
-# Apple can go f*ck themselves
+# Apple seriously, comon
 ._*
 .DS_Store
 .DS_Store?
@@ -12,11 +12,13 @@ Thumbs.db
 *~
 
 # JetBrains IDE configuration files
-.idea
 .idea/
 
 # SASS/SCSS
-/.sass-cache
+.sass-cache/
 
 # Bundler
-vendor/ruby
+.gems/
+
+# Bower
+bower_components/
