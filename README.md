@@ -14,5 +14,8 @@ This is a small utility script I wrote to solve a mindless problem - my iTunes l
 ## TODO:
 - Add tests
 - Make this into a gem
+- Add rake tasks
+	- install as binary executable
+	- output status of duplicates
 - ADD CLI capability
-- Add duplicate track management features
+- Add duplicate track management features?
