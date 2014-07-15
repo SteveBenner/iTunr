@@ -3,8 +3,7 @@ This is a small utility script I wrote to solve a mindless problem - my iTunes l
 
 ### Usage
 ```bash
-    bundle install
-    ruby itunr.rb
+bundle install && ruby itunr.rb
 ```
 
 ## Features
@@ -18,4 +17,5 @@ This is a small utility script I wrote to solve a mindless problem - my iTunes l
 	- install as binary executable
 	- output status of duplicates
 - ADD CLI capability
-- Add duplicate track management features?
+- YAML config
+- export log in JSON (and output YAML by default)
