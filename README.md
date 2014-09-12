@@ -11,6 +11,8 @@ bundle install && ruby itunr.rb
 - Creates backups of all files it modifies, just in case
 
 ## TODO:
+- Incorporate features
+    - [awesome OS X patch] to keep iTunes from monopolizing control over the pause/play media key (*remember to give due credit + linkback ofc*)
 - Add tests
 - Make this into a gem
 - Add rake tasks
@@ -19,3 +21,6 @@ bundle install && ruby itunr.rb
 - ADD CLI capability
 - YAML config
 - export log in JSON (and output YAML by default)
+
+
+[awesome OS X patch]:http://www.thebitguru.com/projects/iTunesPatch
