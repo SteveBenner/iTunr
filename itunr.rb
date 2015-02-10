@@ -28,30 +28,30 @@ LIBRARY_DATA_FILE = File.join ITUNES_DIR, 'iTunes Library.itl'
 lib = Plist::parse_xml LIBRARY_FILE
 
 valid_files = lib['Tracks'].select do |track, data|
-	filepath = data['Location']
-	# decode the file path (which is encoded as a URI)
-	file = URI.decode filepath
-	# normalize file path by pruning URI info
-	file = file.sub(/file:\/\/localhost/, '')
-	# check to see if file has been removed or not (condition for the 'select' loop)
-	File.exist? file
+  filepath = data['Location']
+  # decode the file path (which is encoded as a URI)
+  file = URI.decode filepath
+  # normalize file path by pruning URI info
+  file = file.sub(/file:\/\/localhost/, '')
+  # check to see if file has been removed or not (condition for the 'select' loop)
+  File.exist? file
 end
 
 missing_track_count = lib['Tracks'].size - valid_files.size
 lib['Tracks'] = valid_files # remove deleted files from library tracklist
 
 if File.exist? LIBRARY_DATA_FILE
-	FileUtils.cp LIBRARY_DATA_FILE, "#{LIBRARY_DATA_FILE}.backup" # backup library file
-	FileUtils.rm LIBRARY_DATA_FILE # delete actual library file, prompting a rebuild from plist
+  FileUtils.cp LIBRARY_DATA_FILE, "#{LIBRARY_DATA_FILE}.backup" # backup library file
+  FileUtils.rm LIBRARY_DATA_FILE # delete actual library file, prompting a rebuild from plist
 else
-	abort 'ERROR - missing iTunes Library file.'
+  abort 'ERROR - missing iTunes Library file.'
 end
 
 if File.exist? LIBRARY_FILE
-	FileUtils.cp LIBRARY_FILE, "#{LIBRARY_FILE}.backup" # backup library plist
-	FileUtils.rm LIBRARY_FILE
+  FileUtils.cp LIBRARY_FILE, "#{LIBRARY_FILE}.backup" # backup library plist
+  FileUtils.rm LIBRARY_FILE
 else
-	abort 'ERROR - missing iTunes Library plist.'
+  abort 'ERROR - missing iTunes Library plist.'
 end
 
 IO.write LIBRARY_FILE, lib.to_plist # replace library plist file with purged plist
